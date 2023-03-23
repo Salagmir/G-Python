@@ -8,3 +8,14 @@
 Введите число n: 3
 n + nn + nnn = 369
 """
+
+try:
+    n = int(input("Видите число >>> "))
+except ValueError:
+    print("Не число")
+    exit(0)
+
+n1 = int(f"{n}{n}")
+n2 = int(f"{n}{n}{n}")
+n3 = n + n1 + n2
+print(f"{n} + {n1} + {n2} = {n3}")

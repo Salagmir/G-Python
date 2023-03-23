@@ -14,3 +14,9 @@
 1. раз
 2. перерефриж
 """
+
+my_list = input("Введите список слов >>> ").split()
+counter = 0
+for x in my_list:
+    counter += 1
+    print(f"{counter}. {x[:11].title()}")

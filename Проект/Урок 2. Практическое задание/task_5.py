@@ -15,3 +15,22 @@
 Набор натуральных чисел можно задать непосредственно в коде,
 например, my_list = [7, 5, 3, 3, 2].
 """
+
+rating = [7, 5, 3, 3, 2, 6, 1, 9, 8, 10]
+rating.sort(reverse=True)
+while True:
+    print("Рейтинг =", *rating)
+    request = input("Хотите добавить ваш результат? [y/n] >>> ").lower()
+    if request == "y":
+        try:
+            result = int(input("Введите ваш результат >>> "))
+            rating.append(result), rating.sort(reverse=True)
+        except ValueError:
+            print("Не число!!! Попробуйте снова!")
+        except KeyboardInterrupt:
+            exit(0)
+    elif request == "n":
+        print("Программа завершена")
+        break
+    else:
+        print("Ошибка!!! Попробуйте снова!")

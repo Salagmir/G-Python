@@ -25,3 +25,33 @@
 “ед”: [“шт.”]
 }
 """
+
+name = {"Название": str, "Цена": int, "Количество": int, "ед": str, }
+number = []
+counter = 1
+while True:
+    yas = input(f"Товаров = {len(number)}, добавить? [y/n] >>> ").lower()
+    if yas == "y":
+        info = {}
+        for key, content in name.items():
+            try:
+                user_input = input(f"Заполните поле '{key}' >>> ")
+                info[key] = content(user_input)
+            except ValueError:
+                print("Не число!!! Попробуйте снова!")
+                exit(0)
+        number.append((counter, info))
+        counter += 1
+    elif yas == "n":
+        break
+    else:
+        print("Ошибка")
+
+short_loads = {}
+for analytics_key in name.keys():
+    list_1 = []
+    for product in number:
+        list_1.append(product[1][analytics_key])
+    short_loads[analytics_key] = list_1
+
+print(short_loads)

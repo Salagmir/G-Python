@@ -6,3 +6,28 @@
     символ введен после нескольких чисел, то вначале нужно добавить сумму этих чисел к полученной
     ранее сумме и после этого завершить программу.
 """
+
+
+def zero():
+    counter = 0
+    while True:
+        try:
+            print(counter)
+            s = input("Введите чисела, разделённые пробелом. Для завершения введите [$] >>> ")
+            try:
+                s.index("$")
+            except ValueError:
+                for n in map(int, s.split()):
+                    counter += n
+            else:
+                s = s[0:-2]
+                for n in map(int, s.split()):
+                    counter += n
+                print(counter)
+                exit(0)
+        except ValueError:
+            print("Ощибка ввода")
+            exit(0)
+
+
+zero()

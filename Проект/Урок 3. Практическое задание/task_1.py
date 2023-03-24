@@ -17,3 +17,27 @@ Process finished with exit code 0
 
 Process finished with exit code 0
 """
+
+
+def division(a, b):
+    """
+    Деление чисел
+    :param a:
+    :param b:
+    :return a / b:
+    """
+    try:
+        return a / b
+    except ZeroDivisionError:
+        print("Вы что? Пытаетесь делить на 0!")
+        exit(0)
+
+
+try:
+    x = int(input("Введите первое число: "))
+    z = int(input("Введите первое число: "))
+except ValueError:
+    print("Не число")
+    exit(0)
+else:
+    print(division(x, z))

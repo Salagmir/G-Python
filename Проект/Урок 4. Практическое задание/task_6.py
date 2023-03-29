@@ -12,3 +12,25 @@
 Во втором также необходимо предусмотреть условие,
 при котором повторение элементов списка будет прекращено.
 """
+from itertools import count, cycle
+
+my_list_1 = []
+my_list_2 = []
+
+print("Скрипт A")
+for x in count(3):
+    if x > 10:
+        break
+    my_list_1.append(x)
+print(my_list_1)
+
+print("Скрипт Б")
+a = ["F", 1, 2, 3, 4, 5]
+m = 7
+c = 0
+for i in cycle(a):
+    my_list_2.append(i)
+    c += 1
+    if c >= m:
+        break
+print(my_list_2)

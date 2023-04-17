@@ -41,12 +41,11 @@ class Matrix:
         return str(self.my_list)
 
     def __add__(self, other):
-        return Matrix(self.my_list[0][0] + other.my_list[0][0],
-                      self.my_list[1][0] + other.my_list[1][0],
-                      self.my_list[2][0] + other.my_list[2][0])
+        return Matrix(self.my_list[0][0] + other.my_list[0][0], self.my_list[1][0] + other.my_list[1][0], self.my_list[2][0] + other.my_list[2][0])
 
 
 x = Matrix(1, 2, 3)
 z = Matrix(1, 2, 3)
 
+print(x)
 print(x + z)

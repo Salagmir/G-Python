@@ -25,3 +25,32 @@
 
 Два класса: абстрактный и Clothes
 """
+
+
+class Clothes:
+    def __init__(self, size=0, height=0):
+        self.size = size
+        self.height = height
+
+    def __str__(self):
+        return f"Общий расход ткани = {round((self.size/6.5 + 0.5) + (2*self.height + 0.3), 2)}"
+
+    @property
+    def coat(self):
+        if self.size > 0:
+            return f"Расход ткани на пальто = {round(self.size/6.5 + 0.5,2)}"
+        else:
+            return "Параметр размер не заданный!"
+
+    @property
+    def suit(self):
+        if self.height > 0:
+            return f"Расход ткани на костюм = {round(2*self.height + 0.3, 2)}"
+        else:
+            return "Параметр рост не заданный!"
+
+
+x = Clothes(32, 43)
+print(x.coat)
+print(x.suit)
+print(x)

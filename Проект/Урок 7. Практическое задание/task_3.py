@@ -100,3 +100,23 @@ print(cell2.make_order(10))
 *****\n *****\n *****\n *****\n *****\n *****\n
 **********\n **********\n *****
 """
+
+
+class Cell:
+    def __init__(self, quantity):
+        self.quantity = quantity
+
+    def __add__(self, other):
+        return self.quantity + other.quantity
+
+    def __sub__(self, other):
+        if self.quantity > other.quantity:
+            return self.quantity - other.quantity
+        else:
+            return "Разность отрицательна, поэтому операция не выполняется"
+
+    def __mul__(self, other):
+        return self.quantity * other.quantity
+
+    def __truediv__(self, other):
+        return self.quantity // other.quantity
